@@ -53,7 +53,7 @@ nav ul {
 /* == Section 1 ==*/
 
 .section-1 {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(60, 57, 165);
 }
 
 .container {
@@ -65,7 +65,7 @@ nav ul {
 }
 
 h1 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 64px;
   text-align: center;
 }
