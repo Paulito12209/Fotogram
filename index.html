@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="./assets/icons/favicon.svg"
-      type="image/svg+xml"
-      alt="Favicon"
-    />
     <title>Fotogram - Pauls Fotogalerie</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
   </head>
+  
   <body onload="onLoadFunction()">
+    <!-- Header mit Navigation -->
     <header>
       <nav class="widescreen" aria-label="Hauptnavigation">
         <div class="section-paddings nav-container">
@@ -20,34 +17,75 @@
         </div>
       </nav>
     </header>
+
+    <!-- Hauptinhalt -->
     <main>
       <section class="widescreen">
-        <div class="section-paddings" aria-label="Fotogalerie">
+        <div class="section-paddings">
           <h1>Your personal photo album</h1>
+          
+          <!-- Fotogalerie Container -->
           <div class="gallery-container" id="gallery" role="grid" aria-label="Bildgalerie">
-            <!-- Hier werden die Bilder dynamisch eingefügt -->
+            <!-- Hier werden die Bilder dynamisch über JavaScript eingefügt -->
           </div>
           
-          <!-- Dialog für Bildansicht -->
-          <div class="overlay hidden" id="overlay" role="dialog" aria-modal="true" aria-labelledby="imageTitle" tabindex="-1">
+          <!-- Dialog Fenster für große Bildansicht -->
+          <div 
+            class="overlay hidden" 
+            id="overlay" 
+            role="dialog" 
+            aria-modal="true" 
+            aria-labelledby="imageTitle" 
+            tabindex="-1">
+            
             <div class="dialog">
+              <!-- Dialog Header mit Titel und Schließ-Button -->
               <div class="dialog-header">
                 <h2 class="image-title" id="imageTitle">Bild Titel</h2>
-                <button class="close-btn" id="closeBtn" aria-label="Dialog schließen">✕</button>
+                <button 
+                  class="close-btn" 
+                  id="closeBtn" 
+                  aria-label="Dialog schließen">
+                  ✕
+                </button>
               </div>
+              
+              <!-- Dialog Inhalt mit großem Bild -->
               <div class="dialog-content">
-                <img src="" alt="" class="dialog-image" id="dialogImage" />
+                <img 
+                  src="" 
+                  alt="" 
+                  class="dialog-image" 
+                  id="dialogImage" />
               </div>
+              
+              <!-- Dialog Footer mit Navigation -->
               <div class="dialog-footer">
-                <button class="nav-btn prev" id="prevBtn" aria-label="Vorheriges Bild">◀</button>
-                <p class="image-number" id="imageNumber" aria-live="polite">1 von 2</p>
-                <button class="nav-btn next" id="nextBtn" aria-label="Nächstes Bild">▶</button>
+                <button 
+                  class="nav-btn prev" 
+                  id="prevBtn" 
+                  aria-label="Vorheriges Bild">
+                  ◀
+                </button>
+                
+                <p class="image-number" id="imageNumber" aria-live="polite">
+                  1 von 2
+                </p>
+                
+                <button 
+                  class="nav-btn next" 
+                  id="nextBtn" 
+                  aria-label="Nächstes Bild">
+                  ▶
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer>
       <div class="widescreen">
         <div class="section-paddings footer-content">
@@ -58,6 +96,7 @@
         </div>
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

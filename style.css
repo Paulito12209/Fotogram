@@ -1,304 +1,293 @@
-/* Basis-Styling */
+/* ===== GRUNDLAGEN ===== */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a2332;
-    color: white;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background-color: #1a2332;
+  color: white;
+  line-height: 1.6;
 }
 
+/* ===== LAYOUT KOMPONENTEN ===== */
 .widescreen {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-paddings {
-    padding: 20px;
+  padding: 20px;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
-    background-color: #1a2332;
-    padding: 10px 0;
+  background-color: #1a2332;
+  padding: 10px 0;
 }
 
 .nav-container img {
-    height: 40px;
+  height: 40px;
 }
 
-/* Main Content */
+/* ===== MAIN CONTENT ===== */
 main {
-    min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5em;
-    font-weight: 300;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 300;
 }
 
-/* Gallery Container mit Flexbox */
+/* ===== FOTOGALERIE ===== */
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: center;
 }
 
 .thumbnail {
-    background-color: #2a3441;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
-    width: 400px; /* Feste Breite */
-    flex-shrink: 0;
+  background-color: #2a3441;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  width: 400px;
+  flex-shrink: 0;
 }
 
+/* Hover Effekt für Thumbnails */
 .thumbnail:hover,
 .thumbnail:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border-color: #4a9eff;
-    outline: none;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #4a9eff;
+  outline: none;
 }
 
-/* Feste Größe für Thumbnails: 400px x 300px */
 .thumbnail-image-container {
-    position: relative;
-    width: 400px;
-    height: 300px; /* Feste Höhe statt padding-bottom */
-    overflow: hidden;
-    border-radius: 8px 8px 0 0;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
 }
 
 .thumbnail-image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .thumbnail p {
-    padding: 15px;
-    text-align: center;
-    font-weight: 500;
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
 }
 
-/* Overlay und Dialog */
+/* ===== DIALOG OVERLAY ===== */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay.hidden {
-    display: none;
+  display: none;
 }
 
+/* ===== DIALOG FENSTER ===== */
 .dialog {
-    background-color: #2a3441;
-    border-radius: 12px;
-    padding: 0;
-    width: 400px; /* Feste Breite wie gewünscht */
-    height: 800px; /* Feste Höhe wie gewünscht */
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background-color: #2a3441;
+  border-radius: 12px;
+  padding: 0;
+  width: 400px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .dialog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    border-bottom: 1px solid #3a4451;
-    flex-shrink: 0;
-    height: 80px; /* Feste Höhe für Header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #3a4451;
+  flex-shrink: 0;
+  height: 80px;
 }
 
 .image-title {
-    font-size: 1.5em;
-    font-weight: 500;
-    margin: 0;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0;
 }
 
 .close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-    background-color: #ff4757;
-    outline: none;
+  background-color: #ff4757;
+  outline: none;
 }
 
 .dialog-content {
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    height: calc(800px - 80px - 80px); /* Höhe minus Header minus Footer */
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: calc(800px - 80px - 80px);
 }
 
 .dialog-image {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 8px;
-    object-fit: contain; /* Bild behält Proportionen bei */
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .dialog-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    border-top: 1px solid #3a4451;
-    flex-shrink: 0;
-    height: 80px; /* Feste Höhe für Footer */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-top: 1px solid #3a4451;
+  flex-shrink: 0;
+  height: 80px;
 }
 
+/* ===== NAVIGATION BUTTONS ===== */
 .nav-btn {
-    background-color: #4a9eff;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    min-width: 50px;
+  background-color: #4a9eff;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 50px;
 }
 
 .nav-btn:hover,
 .nav-btn:focus {
-    background-color: #357abd;
-    transform: scale(1.05);
-    outline: none;
+  background-color: #357abd;
+  transform: scale(1.05);
+  outline: none;
 }
 
 .nav-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .image-number {
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #cccccc;
-    margin: 0 20px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #cccccc;
+  margin: 0 20px;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
-    background-color: #0f1419;
-    padding: 20px 0;
+  background-color: #0f1419;
+  padding: 20px 0;
 }
 
 .footer-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .footer-content img {
-    height: 30px;
+  height: 30px;
 }
 
 .footer-content span {
-    color: #cccccc;
-    font-size: 0.9em;
+  color: #cccccc;
+  font-size: 0.9em;
 }
 
-/* Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .gallery-container {
-        gap: 15px;
-    }
-    
-    .thumbnail {
-        width: 300px; /* Kleinere Breite für mobile */
-    }
-    
-    .thumbnail-image-container {
-        width: 300px;
-        height: 225px; /* 300 * 0.75 für 4:3 Verhältnis */
-    }
-    
-    .dialog {
-        margin: 20px;
-        width: calc(100vw - 40px);
-        height: calc(100vh - 40px);
-        max-width: 350px;
-        max-height: 700px;
-    }
-    
-    .dialog-header,
-    .dialog-footer {
-        padding: 15px 20px;
-        height: 70px;
-    }
-    
-    .dialog-content {
-        height: calc(100% - 140px); /* 100% minus Header minus Footer */
-    }
-    
-    .image-title {
-        font-size: 1.2em;
-    }
-    
-    .nav-btn {
-        padding: 10px 12px;
-        font-size: 14px;
-    }
-    
-    .image-number {
-        margin: 0 15px;
-        font-size: 1em;
-    }
+  .gallery-container {
+    gap: 15px;
+  }
+  
+  .thumbnail {
+    width: 300px;
+  }
+  
+  .thumbnail-image-container {
+    width: 300px;
+    height: 225px;
+  }
+  
+  .dialog {
+    margin: 20px;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    max-width: 350px;
+    max-height: 700px;
+  }
+  
+  .dialog-header,
+  .dialog-footer {
+    padding: 15px 20px;
+    height: 70px;
+  }
+  
+  .dialog-content {
+    height: calc(100% - 140px);
+  }
+  
+  .image-title {
+    font-size: 1.2em;
+  }
+  
+  .nav-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .image-number {
+    margin: 0 15px;
+    font-size: 1em;
+  }
 }
 
-/* Fokus-Indikatoren für bessere Barrierefreiheit */
+/* ===== FOKUS INDIKATOREN ===== */
 *:focus {
-    outline: 2px solid #4a9eff;
-    outline-offset: 2px;
-}
-
-/* Screen Reader Only Text */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  outline: 2px solid #4a9eff;
+  outline-offset: 2px;
 }
