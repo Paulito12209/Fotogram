@@ -226,8 +226,9 @@ footer {
     .dialog {
         margin: 20px;
         width: calc(100vw - 40px);
-        height: 500px; /* Kleinere feste Höhe für mobile Geräte */
-        max-width: calc(100vw - 40px);
+        height: calc((100vw - 40px) * 0.75); /* Behält 4:3 Verhältnis auch mobil bei */
+        max-width: 600px;
+        max-height: 450px; /* 600 * 0.75 = 450 für 4:3 Verhältnis */
     }
     
     .dialog-header,
