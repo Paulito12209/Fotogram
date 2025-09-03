@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widescreen {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.widescreen-footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-left: 1px solid #5a5a5a;
+  border-right: 1px solid #5a5a5a;
+}
+
+.section-paddings {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+header {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(230, 230, 219);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(230, 230, 219);
+}
+
+header img {
+  height: 48px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  font-size: 36px;
+}
+
+/* == Section 1 ==*/
+
+.section-1 {
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 64px;
+  text-align: center;
+}
+
+/* == Section 2 ==*/
+.section-2 {
+  background-color: rgb(255, 255, 255);
+}
+
+/* == Section 3 ==*/
+.section-3 {
+  background-color: rgb(255, 255, 255);
+}
+
+/* == Footer ==*/
+footer {
+  height: 200px;
+  width: 100%;
+  background-color: #5a5a5a;
+  color: white;
+  flex-shrink: 0;
+}
+
+.footer-content {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  flex-shrink: 0;
+}
+
+footer img {
+  height: 48px;
+}
+
+footer span {
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
