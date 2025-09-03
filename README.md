@@ -1,5 +1,6 @@
 # Fotogram
 📸 Fotogram - Interaktive Fotoalbum WebApp für Foto-Management. Lernprojekt mit CRUD-Funktionalität, Variablen &amp; Datenstrukturen. Ermöglicht Upload, Bearbeitung und Organisation von Fotos. Built with HTML, CSS &amp; JavaScript. Perfekt für JavaScript-Grundlagen!
+![Vorschaubild](assets/img/preview_fotogram.png)
 
 ## 🎯 Projektübersicht
 
