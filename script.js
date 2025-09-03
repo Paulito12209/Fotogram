@@ -1,55 +1,86 @@
-// Grundlegende Variablen
-let images = ["dark mode_notes app", "light mode_notes app"];
+// Arrays und einfache Variablen (wie im Unterricht gelernt)
+let images = ['images/bild1.jpg', 'images/bild2.jpg'];
+let imageTitles = ['Erstes Bild', 'Zweites Bild'];
 let currentImageIndex = 0;
 
-// Dialog-Element holen
-const dialog = document.getElementById("imageDialog");
+// DOM-Referenzen holen (wie bei den Übungen)
+let gallery = document.getElementById('gallery');
+let overlay = document.getElementById('overlay');
+let dialogImage = document.getElementById('dialogImage');
+let imageTitle = document.getElementById('imageTitle');
+let imageNumber = document.getElementById('imageNumber');
 
-// Dialog öffnen (Template-Funktion nutzen)
-function openDialog(imageIndex) {
-  currentImageIndex = imageIndex;
-  updateDialogContent();
-  dialog.showModal();
+// Onload-Funktion (wie immer im Unterricht)
+function onLoadFunction() {
+    renderGallery();
+    setupEventListeners();
 }
 
-// Dialog schließen
-function closeDialog() {
-  dialog.close();
+// Template-Funktion (wie im Unterricht gelernt)
+function getImageTemplate(index) {
+    return `
+        <div class="thumbnail" onclick="openDialog(${index})">
+            <img src="${images[index]}" alt="${imageTitles[index]}">
+            <p>${imageTitles[index]}</p>
+        </div>
+    `;
 }
 
 function renderGallery() {
-  const container = document.querySelector(".gallery-container");
-  container.innerHTML = "";
-
-  for (let i = 0; i < images.length; i++) {
-    const imageElement = createImageElement(i);
-    container.appendChild(imageElement);
-  }
+    let htmlContent = '';
+    for (let i = 0; i < images.length; i++) {
+        htmlContent += getImageTemplate(i);
+    }
+    gallery.innerHTML = htmlContent;
 }
 
-// Template-Funktion (saubere Code-Struktur)
-function createImageElement(index) {
-  const div = document.createElement("div");
-  div.className = "thumbnail";
-  div.innerHTML = `<img src="${images[index]}" alt="Bild ${index + 1}">`;
-  div.onclick = () => openDialog(index);
-  return div;
+function openDialog(imageIndex) {
+    currentImageIndex = imageIndex;
+    updateDialogContent();
+    overlay.classList.remove('hidden');
 }
 
-// Navigation zwischen Bildern
+function closeDialog() {
+    overlay.classList.add('hidden');
+}
+
+function updateDialogContent() {
+    dialogImage.src = images[currentImageIndex];
+    dialogImage.alt = imageTitles[currentImageIndex];
+    imageTitle.innerHTML = imageTitles[currentImageIndex];
+    imageNumber.innerHTML = (currentImageIndex + 1) + ' von ' + images.length;
+}
+
+function setupEventListeners() {
+    // Schließen-Button
+    document.getElementById('closeBtn').addEventListener('click', closeDialog);
+    
+    // Navigation
+    document.getElementById('prevBtn').addEventListener('click', prevImage);
+    document.getElementById('nextBtn').addEventListener('click', nextImage);
+    
+    // Klick außerhalb schließt Dialog
+    overlay.addEventListener('click', function(event) {
+        if (event.target === overlay) {
+            closeDialog();
+        }
+    });
+}
+
 function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % images.length; // Springt zurück zum ersten
-  updateDialogContent();
+    if (currentImageIndex < images.length - 1) {
+        currentImageIndex = currentImageIndex + 1;
+    } else {
+        currentImageIndex = 0; // Zurück zum ersten Bild
+    }
+    updateDialogContent();
 }
 
 function prevImage() {
-  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-  updateDialogContent();
+    if (currentImageIndex > 0) {
+        currentImageIndex = currentImageIndex - 1;
+    } else {
+        currentImageIndex = images.length - 1; // Zum letzten Bild
+    }
+    updateDialogContent();
 }
-
-// Klick außerhalb des Dialogs (wie im YouTube-Video gezeigt)
-dialog.addEventListener("click", (e) => {
-  if (e.target === dialog) {
-    closeDialog();
-  }
-});

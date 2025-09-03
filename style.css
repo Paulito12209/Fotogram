@@ -27,7 +27,7 @@ nav {
 }
 
 .nav-container {
-  height:80px;
+  height: 80px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -35,8 +35,8 @@ nav {
 }
 
 main {
-background-color: #051721;
-height: 100vh;
+  background-color: #051721;
+  height: 100vh;
 }
 
 h1 {
@@ -46,16 +46,39 @@ h1 {
   padding-top: 40px;
 }
 /* = Hover-Effekte =*/
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
 .thumbnail:hover {
-    transform: scale(1.05);
-    border: 2px solid #007bff;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /* == Footer ==*/
 footer {
   height: 160px;
   width: 100%;
-  background-color: #06252E;
+  background-color: #06252e;
   color: white;
   flex-shrink: 0;
 }
