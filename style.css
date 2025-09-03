@@ -24,7 +24,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background-color: #1a2332;
+  background-color: #07242E;
   padding: 10px 0;
 }
 
@@ -35,6 +35,7 @@ header {
 /* ===== MAIN CONTENT ===== */
 main {
   min-height: calc(100vh - 120px);
+  background-color: #051721;
 }
 
 h1 {
@@ -219,7 +220,7 @@ h1 {
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: #0f1419;
+  background-color: #06252E;
   padding: 20px 0;
 }
 
