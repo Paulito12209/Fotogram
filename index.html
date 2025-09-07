@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icons/favicon.svg" type="img2/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fotogram - Pauls Fotogalerie</title>
+  </head>
+  <body onload="renderGallary()">
+    <main>
+      <nav>
+        <div class="paddings">
+          <img src="./assets/img/Fotogram_Logo.svg" alt="" />
+        </div>
+      </nav>
+    </main>
+    <section class="gallery">
+      <div class="container">
+        <div class="paddings">
+          <div class="card"><h1>Pauls Wildlife Animals</h1></div>
+          <div class="gallery-content" id="gallery-content">
+            <!-- Hier sollen die Bilder gerendert werden -->
+          </div>
+        </div>
+      </div>
+      <!-- Hier befindet sich das Dialog Fenster -->
+      <div class="container">
+        <div class="dialog-frame paddings">
+          <dialog
+            class="dialog-card"
+            id="dialog"
+            aria-labelledby="dialog-img-title"
+            aria-describedby="dialog-img-title"
+          >
+            <div class="wrapper">
+              <header class="dialog-info dialog-paddings">
+                <h4 id="dialog-img-title" class="img-title">Titel Bild</h4>
+                <button
+                  onclick="closeDialog()"
+                  class="close-dialog"
+                  aria-label="close-dialog"
+                  aria-haspopup="close dialog"
+                  aria-controls="image_dialog"
+                >
+                  X
+                </button>
+              </header>
+              <div class="dialog-divider"></div>
+              <section class="image-dialog-box dialog-paddings">
+                <img
+                  id="show_image_dialog"
+                  class="dialog-img"
+                  src=""
+                  alt=""
+                />
+              </section>
+              <div class="dialog-divider"></div>
+              <footer class="dialog-footer dialog-paddings">
+                <button
+                  id="previous-image-btn"
+                  class="dialog-btn"
+                  onclick="previousImage(i)"
+                  aria-label="change-to-previous-image"
+                >
+                  ◀︎
+                </button>
+                <span class="counter" id="img-counter"></span>
+                <button
+                  id="next-image-btn"
+                  class="dialog-btn"
+                  onclick="nextImage(i)"
+                  aria-label="change-to-next-image"
+                >
+                  ▶︎
+                </button>
+              </footer>
+            </div>
+          </dialog>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="paddings footer-info">
+          <img
+            src="./assets/icons/favicon.svg"
+            alt="Fotogram Logo"
+            title="Fotogram Logo"
+          />
+          <h4>Pauls Fotogram</h4>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
